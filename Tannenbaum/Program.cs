@@ -72,17 +72,16 @@ namespace Tannenbaum
             Console.Clear();
             Console.WriteLine("Modell {0}: \n\n" + new string('*', größe * 2 +2) + "\n", Modell);
 
-            for (int i = 0, nadeln = -1, leer = größe; i < größe; i++)
+            for (int i = 0, nadeln = -1, leer = größe +1 ; i < größe; i++)
             {
                 if (kerzen == 1)
                 {
                     if (i == 0) Console.WriteLine(new string(' ', größe + 1) + 'i');
-                    else { Console.WriteLine(new string(' ', leer) + 'i' + new string(material, nadeln += 2) + 'i'); leer--; }
+                    else Console.WriteLine(new string(' ', leer--) + 'i' + new string(material, nadeln += 2) + 'i'); 
                 }
                 else
                 {
-                    Console.WriteLine(new string(' ', leer) + new string(material, nadeln += 2));
-                    leer--;
+                    Console.WriteLine(new string(' ', leer--) + new string(material, nadeln += 2));
                 }
             }
 
